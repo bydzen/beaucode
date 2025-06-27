@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+}
+
+select,
+textarea,
+button {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 8px;
+}
+
+textarea {
+  height: 200px;
+  font-family: monospace;
+  resize: vertical;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 120px;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+pre {
+  background: #f5f5f5;
+  padding: 15px;
+  white-space: revert;
+  word-wrap: break-word;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  font-family: monospace;
+  overflow: scroll;
+}
