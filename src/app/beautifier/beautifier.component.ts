@@ -18,6 +18,7 @@ export class BeautifierComponent {
   output = '';
   type: 'html' | 'css' | 'js' = 'html';
 
+  // Change the type of code to beautify
   beautify() {
     switch (this.type) {
       case 'html':
@@ -30,5 +31,26 @@ export class BeautifierComponent {
         this.output = beautifyJs(this.code, { indent_size: 2 });
         break;
     }
+  }
+
+  // Copy the beautified code to clipboard and change the button text to "Copied!"
+  copyToClipboard() {
+    navigator.clipboard.writeText(this.output).then(() => {
+      const copyButton = document.querySelector(
+        '.copy-button'
+      ) as HTMLButtonElement;
+      if (copyButton) {
+        copyButton.textContent = 'Copied!';
+        setTimeout(() => {
+          copyButton.textContent = 'Copy Beaucode';
+        }, 2000);
+      }
+    });
+  }
+
+  // Clear the input and output fields
+  clear() {
+    this.code = '';
+    this.output = '';
   }
 }
